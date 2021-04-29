@@ -1,0 +1,51 @@
+﻿@model webAppV1.Models.Appointment
+
+@{
+    ViewBag.Title = "getAppointmentById";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>getAppointmentById</h2>
+
+<div>
+    <h4>Appointment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.beginhour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.beginhour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.endhour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.endhour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<webAppV1.Models.Appointment>
+
+@{
+    ViewBag.Title = "GetAllAppointments";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>GetAllAppointments</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.beginhour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.endhour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.beginhour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.endhour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
